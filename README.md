@@ -56,7 +56,7 @@ This application is built using **React.js** for the frontend, along with **Char
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/crm-dashboard.git
+git clone https://github.com/gagandeepsingh76/CRM-Issue-Tracking-Automation-Dashboard.git
 ```
 
 ### 2️⃣ Change Directory
