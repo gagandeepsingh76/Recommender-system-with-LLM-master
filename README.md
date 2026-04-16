@@ -1,238 +1,127 @@
-# 📊 CRM Dashboard
+# Recommender System Project
 
-## 📌 Description
+This project demonstrates a recommendation system using different approaches, including traditional methods, hybrid techniques, and a modern large language model (LLM) approach. The system aims to predict and recommend items to users based on their interactions, preferences, and contextual data.
 
-The **CRM Dashboard** is a web application that provides a comprehensive overview of key metrics for customer relationship management. It includes visualizations such as line charts and pie charts to display user data and trends over various time ranges.
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Approaches](#approaches)
+    - [Traditional Recommendation](#traditional-recommendation)
+    - [Hybrid Recommendation](#hybrid-recommendation)
+    - [LLM-based Recommendation](#llm-based-recommendation)
+3. [Comparison of Approaches](#comparison-of-approaches)
+4. [Project Structure](#project-structure)
+5. [Installation](#installation)
+6. [Usage](#usage)
+7. [Results](#results)
+8. [Conclusion](#conclusion)
 
-This application is built using **React.js** for the frontend, along with **Chart.js** for rendering charts, and **Axios** for data fetching.
+## Introduction
 
----
+The purpose of this project is to explore and compare different recommendation techniques. Recommendation systems are widely used in various domains such as e-commerce, content streaming platforms, and social media to enhance user experience by suggesting relevant items.
 
-# 🚀 Features
+## Approaches
 
-- **Dynamic Data Fetching**  
-  Fetches and updates data based on selected time ranges.
+### Traditional Recommendation
 
-- **User Metrics**  
-  Displays total users, new leads, closed deals, and open tickets.
+Traditional recommendation systems include:
 
-- **Charts**  
-  Includes pie charts and line charts to visualize data.
+- **Collaborative Filtering**: Recommends items based on user-item interactions, leveraging similarities between users (user-based) or items (item-based).
+- **Content-Based Filtering**: Recommends items based on the item's content and user preferences for similar items.
 
-- **Responsive Design**  
-  Designed to be fully responsive and accessible on various devices.
+These methods are relatively easy to implement but may suffer from issues such as the cold-start problem and lack of contextual understanding.
 
----
+### Hybrid Recommendation
 
-# 🛠 Technologies Used
+Hybrid recommendation systems combine multiple recommendation techniques to overcome the limitations of individual methods. For instance, a hybrid system might merge collaborative filtering with content-based filtering to create more accurate predictions. This combination provides better results by leveraging both user behavior and content characteristics.
 
-### Frontend
-- React.js
-- Tailwind CSS
+**Advantages**:
+- Can alleviate cold-start issues.
+- Provides more robust recommendations by considering multiple factors.
 
-### Charts
-- Chart.js
-- React Chart.js 2
+### LLM-based Recommendation
 
-### Data Fetching
-- Axios
+Large Language Models (LLMs) like GPT-4 are capable of understanding complex patterns in user interactions, contextual data, and item descriptions. LLM-based recommendation systems can provide more personalized and context-aware suggestions by interpreting unstructured data such as text reviews, descriptions, and user queries.
 
-### Styling
-- Tailwind CSS
+**Advantages**:
+- Able to handle unstructured data.
+- Provides more nuanced recommendations considering context, sentiment, and language patterns.
+- Adaptable to various domains with minimal changes.
 
----
+## Comparison of Approaches
 
-# ⚙ Getting Started
+| Aspect                     | Traditional Recommender | Hybrid Recommender      | LLM-based Recommender   |
+|----------------------------|-------------------------|-------------------------|-------------------------|
+| **Ease of Implementation**  | High                    | Medium                  | Low                     |
+| **Cold Start Problem**      | Severe                  | Mitigated               | Minimal                 |
+| **Data Requirements**       | Structured              | Structured              | Structured & Unstructured |
+| **Personalization**         | Basic                   | Moderate                | High                    |
+| **Scalability**             | High                    | Medium                  | Low                     |
+| **Context Awareness**       | Low                     | Medium                  | High                    |
 
-## Prerequisites
+### Visualization of Different Approaches
 
-- Node.js (v14 or later)
-- npm (v6 or later) or yarn
+Here’s a visual comparison of the three recommendation approaches:
 
----
+1. **Traditional Recommendation**: Simple user-item matrix with predictions based on historical data.
 
-# 📥 Installation
+![Traditional Recommendation](./images/traditional-recommendation.png)
 
-### 1️⃣ Clone the Repository
+2. **Hybrid Recommendation**: Combining multiple sources of information to make a more robust prediction.
 
-```bash
-git clone https://github.com/gagandeepsingh76/CRM-Issue-Tracking-Automation-Dashboard.git
-```
+![Hybrid Recommendation](./images/result-of-hybrid.png)
 
-### 2️⃣ Change Directory
+3. **LLM-based Recommendation**: Leveraging large language models to make context-aware and personalized recommendations.
 
-```bash
-cd crm-dashboard
-```
+![LLM-based Recommendation](./images/results-of-llm-recommendation.png)
 
-### 3️⃣ Install Dependencies
-
-```bash
-npm install
-```
-
----
-
-# ▶ Running the Application
-
-### Start the Development Server
-
-```bash
-npm run dev
-```
-
----
-
-# 🧑‍💻 Usage
-
-### 1️⃣ Select Time Range
-
-The `TimeSelector` component allows users to select a time range for the dashboard data.
-
-Available options:
-
-- 1 Day
-- 1 Week
-- 1 Month
-- 1 Year
-
-When a time range is selected, the dashboard dynamically fetches and displays data corresponding to that period.
-
----
-
-### 2️⃣ View Metrics
-
-The dashboard displays the following key metrics in the form of cards:
-
-- **Total Users**  
-  The total number of active, inactive, and new users.
-
-- **New Leads**  
-  The number of leads that have been converted over the selected time range.
-
-- **Closed Deals**  
-  The number of deals that were lost.
-
-- **Open Tickets**  
-  The number of unresolved tickets.
-
----
-
-### 3️⃣ View Charts
-
-#### Pie Chart
-
-The `PieChart` component visually represents the distribution of users across different departments such as:
-
-- Marketing
-- Sales
-- Support
-
-Each department is color-coded to distinguish them easily.
-
----
-
-#### Line Chart
-
-The `LineChart` component shows the trend of leads over the selected time range.
-
-It helps visualize how the number of leads fluctuates over time. Data points are plotted for each time period (e.g., monthly or yearly), allowing tracking of progress or changes effectively.
-
----
-
-### 4️⃣ Data Fetching
-
-The data is fetched from a mock API using **axios**.
-
-The API returns the number of users, leads, and tickets for each time range. The data is dynamically updated based on the selected time range and displayed in the respective charts and cards.
-
----
-
-# 📂 Project Structure
+## Project Structure
 
 ```
-CRM-Dashboard
-│
-├── public
-│   ├── tailor talk.svg
-│   └── vite.svg
-│
-├── src
-│   ├── Pages
-│   │   └── Dashboard.jsx
-│   │
-│   ├── api
-│   │   └── api.js
-│   │
-│   ├── assets
-│   │   └── react.svg
-│   │
-│   ├── components
-│   │   ├── Cards.jsx
-│   │   ├── LineChart.jsx
-│   │   ├── PieChart.jsx
-│   │   └── TimeSelector.jsx
-│   │
-│   ├── services
-│   │   └── dataService.js
-│   │
-│   ├── App.css
-│   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx
-│
-├── README.md
-├── index.html
-├── new.json
-├── package.json
-├── package-lock.json
-├── eslint.config.js
-├── postcss.config.js
-├── tailwind.config.js
-└── vite.config.js
+├── recommender-system.ipynb  # Jupyter notebook containing the project code
+├── data/                     # Directory for datasets
+├── models/                   # Saved models
+├── images/                   # Directory for images used in the README
+├── README.md                 # Project documentation (this file)
+└── requirements.txt          # Dependencies for the project
 ```
 
----
+## Installation
 
-# 📸 Dashboard Preview
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/recommender-system.git
+   cd recommender-system
+   ```
 
-<p align="center">
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-<img width="910" height="623" alt="CRM Dashboard Preview" src="https://github.com/user-attachments/assets/44386b7a-4b15-4a62-a27b-1fe578923628" />
+3. Initialize Git LFS (if required for large files):
+   ```bash
+   git lfs install
+   ```
 
-</p>
+## Usage
 
----
+1. Open the Jupyter notebook:
+   ```bash
+   jupyter notebook recommender-system.ipynb
+   ```
 
-# 👨‍💻 Author
+2. Run the cells in the notebook to train and evaluate the recommendation models.
 
-**Gagandeep Singh**
+## Results
 
-Computer Science Student  
-Interested in **Artificial Intelligence, Web Development, and Data Visualization**
+The results of the recommendation system vary across the different approaches:
 
----
+- **Traditional Recommendation**: Achieved an accuracy of `X%`, with limitations in handling cold starts.
+- **Hybrid Recommendation**: Improved accuracy to `Y%` by combining collaborative and content-based filtering.
+- **LLM-based Recommendation**: Achieved the best performance with an accuracy of `Z%`, demonstrating superior handling of unstructured data and context-aware predictions.
 
-# ⭐ GitHub Repository Description
+## Conclusion
 
-CRM Dashboard built using **React.js, Tailwind CSS, Chart.js, and Axios** to visualize customer relationship management metrics with interactive charts and dynamic data fetching.
+In this project, we explored different recommendation approaches, highlighting the strengths and weaknesses of traditional, hybrid, and LLM-based methods. While traditional methods are easier to implement and scale, hybrid methods offer more robustness, and LLM-based recommendations provide the highest level of personalization and context awareness.
 
----
 
-# 🏷 GitHub Topics
-
-```
-react
-crm-dashboard
-chartjs
-data-visualization
-tailwindcss
-axios
-dashboard-ui
-web-application
-frontend
-```
-
----
-
-⭐ If you like this project, consider giving it a **star** on GitHub!
